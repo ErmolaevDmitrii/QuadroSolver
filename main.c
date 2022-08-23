@@ -8,7 +8,7 @@ int main() {
     while(scanf("%lg%lg%lg", &a, &b, &c) != 3) {
         char temp = 0;
         do {
-            temp = getchar();
+            temp = (char)getchar();
         } while(temp != '\n');
         printf("Неправильный ввод, повторите: ");
     }
