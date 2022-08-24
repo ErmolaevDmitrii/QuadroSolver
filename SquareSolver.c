@@ -3,7 +3,10 @@
 /// @file
 /// @brief Source file containing definitions of functions from SquareSolver.h
 
-bool isZero(double a) {
+int isZero(double a) {
+    if(isinf(a)) {
+        return SS_ERROR;
+    }
     return abs(a) < SS_ZERO;
 }
 
@@ -13,9 +16,13 @@ void CleanTerminalBuffer() {
 }
 
 void GetCoefficientsSquare(double* a, double* b, double* c) {
-    assert(a);
+    if(!a || !b || !c) {
+        return SS_ERROR;
+    }
+    /*assert(a);
     assert(b);
-    assert(c);
+    assert(c);*/
+
     printf("Введите коэффициенты квадратного уравнения: ");
 
     while(scanf("%lg%lg%lg", a, b, c) != 3) {
@@ -26,7 +33,11 @@ void GetCoefficientsSquare(double* a, double* b, double* c) {
 }
 
 void PrintAnswerSquare(struct SquareAnswer* answer) {
-    assert(answer);
+    if(!answer) {
+        return SS_ERROR;
+    }
+    //assert(answer);
+
     switch(answer->rootsCount) {
         case 0:
             printf("Нет корней\n");
@@ -48,9 +59,13 @@ void PrintAnswerSquare(struct SquareAnswer* answer) {
 }
 
 void SolveLinear(double a, double b, struct SquareAnswer* answer) {
-    assert(!isinf(a));
+    if(isinf(a) || isinf(b) || !answer) {
+        *answer = {SS_ERROR, 0, 0};
+        return;
+    }
+    /*assert(!isinf(a));
     assert(!isinf(b));
-    assert(answer);
+    assert(answer);*/
 
     if(isZero(a)) {
         if(isZero(b)) {
@@ -67,10 +82,14 @@ void SolveLinear(double a, double b, struct SquareAnswer* answer) {
 }
 
 void SolveSquare(double a, double b, double c, struct SquareAnswer* answer) {
-    assert(!isinf(a));
+    if(isinf(a) || isinf(b) || isinf(c) || !answer) {
+        *answer = {SS_ERROR, 0, 0};
+        return;
+    }
+    /*assert(!isinf(a));
     assert(!isinf(b));
     assert(!isinf(c));
-    assert(answer);
+    assert(answer);*/
 
     if(isZero(a)) {
         SolveLinear(b, c, answer);
