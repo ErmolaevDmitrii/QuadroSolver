@@ -15,7 +15,7 @@ void CleanTerminalBuffer() {
     return;
 }
 
-void GetCoefficientsSquare(double* a, double* b, double* c) {
+int GetCoefficientsSquare(double* a, double* b, double* c) {
     if(!a || !b || !c) {
         return SS_ERROR;
     }
@@ -29,10 +29,10 @@ void GetCoefficientsSquare(double* a, double* b, double* c) {
         CleanTerminalBuffer();
         printf("Некорректный ввод, повторите: ");
     }
-    return;
+    return 0;
 }
 
-void PrintAnswerSquare(struct SquareAnswer* answer) {
+int PrintAnswerSquare(struct SquareAnswer* answer) {
     if(!answer) {
         return SS_ERROR;
     }
@@ -55,7 +55,7 @@ void PrintAnswerSquare(struct SquareAnswer* answer) {
             printf("Ошибка\n");
             break;
     }
-    return;
+    return 0;
 }
 
 void SolveLinear(double a, double b, struct SquareAnswer* answer) {
@@ -105,9 +105,10 @@ void SolveSquare(double a, double b, double c, struct SquareAnswer* answer) {
         *answer = {0, 0, 0};
         return;
     }
+    double sqrtD = sqrt(D);
     *answer = {2,
-               (-b + sqrt(D)) / (2.0 * a),
-               (-b - sqrt(D)) / (2.0 * a)
+               (-b + sqrtD) / (2.0 * a),
+               (-b - sqrtD) / (2.0 * a)
               };
     return;
 }

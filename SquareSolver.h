@@ -24,7 +24,7 @@ struct SquareAnswer {
 
 /// identify if value is small enough to being zero
 /// @param [in] a value to identify if it's zero
-bool isZero(double a);
+int isZero(double a);
 
 /// clean terminal buffer
 void CleanTerminalBuffer();
@@ -33,7 +33,7 @@ void CleanTerminalBuffer();
 /// @param [out] a an a coefficient
 /// @param [out] b a b coefficient
 /// @param [out] c a c coefficient
-void GetCoefficientsSquare(double* a, double* b, double* c);
+int GetCoefficientsSquare(double* a, double* b, double* c);
 
 /// Solve linear equations of form "kx + b = 0"
 /// @param [in] a a k coefficient
@@ -50,4 +50,4 @@ void SolveSquare(double a, double b, double c, struct SquareAnswer* answer);
 
 /// Print answer for square equation in terminal
 /// @param [in] answer a pointer to SquareAnswer struct
-void PrintAnswerSquare(struct SquareAnswer* answer);
+int PrintAnswerSquare(struct SquareAnswer* answer);
