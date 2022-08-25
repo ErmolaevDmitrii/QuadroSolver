@@ -1,5 +1,5 @@
 /// @file
-/// @brief Header file with structs and functions for solving square equations#include <math.h>
+/// @brief Header file with structs and functions for solving square equations
 
 #include <stdio.h>
 #include <math.h>
@@ -30,9 +30,9 @@ int isZero(double a);
 void CleanTerminalBuffer();
 
 /// get coefficients of square equation from terminal
-/// @param [out] a an a coefficient
-/// @param [out] b a b coefficient
-/// @param [out] c a c coefficient
+/// @param [out] a a pointer to a coefficient
+/// @param [out] b a pointer to b coefficient
+/// @param [out] c a pointer to c coefficient
 int GetCoefficientsSquare(double* a, double* b, double* c);
 
 /// Solve linear equations of form "kx + b = 0"

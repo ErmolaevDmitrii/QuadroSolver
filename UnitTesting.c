@@ -1,10 +1,19 @@
+/// @file
+/// @brief Source file containing definitions of functions from UnitTesting.h
+
 #include "UnitTesting.h"
 
 int isEqual(double a, double b) {
+    assert(!isinf(a));
+    assert(!isinf(b));
+
     return abs(a - b) < SS_ZERO;
 }
 
 void GetExpectedAnswerFromFile(FILE* file, struct SquareAnswer* expectedAnswer) {
+    assert(file);
+    assert(expectedAnswer);
+
     int rootsCount = 0;
     fscanf(file, "%d", &rootsCount);
 
@@ -25,17 +34,26 @@ void GetExpectedAnswerFromFile(FILE* file, struct SquareAnswer* expectedAnswer) 
 }
 
 void GetCoefficientsFromFile(FILE* file, double* a, double* b, double* c) {
+    assert(a);
+    assert(b);
+    assert(c);
+
     fscanf(file, "%lg%lg%lg", a, b, c);
     return;
 }
 
 int CompareAnswers(struct SquareAnswer* answer1, struct SquareAnswer* answer2) {
+    assert(answer1);
+    assert(answer2);
+
     return answer1->rootsCount == answer2->rootsCount &&
            isEqual(answer1->root1, answer2->root1)    &&
            isEqual(answer1->root2, answer2->root2);
 }
 
 void UnitTestingSquare(const char* fileName) {
+    assert(fileName);
+
     FILE* file = fopen(fileName, "r");
     assert(file);
 
