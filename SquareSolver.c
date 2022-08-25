@@ -3,8 +3,12 @@
 /// @file
 /// @brief Source file containing definitions of functions from SquareSolver.h
 
+int CheckNumber(double a) {
+    return !isinf(a) && !isnan(a);
+}
+
 int isZero(double a) {
-    if(isinf(a)) {
+    if(!CheckNumber(a)) {
         return SS_ERROR;
     }
     return abs(a) < SS_ZERO;
@@ -16,12 +20,9 @@ void CleanTerminalBuffer() {
 }
 
 int GetCoefficientsSquare(double* a, double* b, double* c) {
-    if(!a || !b || !c) {
+    if(a == NULL || b == NULL || c == NULL) {
         return SS_ERROR;
     }
-    /*assert(a);
-    assert(b);
-    assert(c);*/
 
     printf("Введите коэффициенты квадратного уравнения: ");
 
@@ -32,11 +33,10 @@ int GetCoefficientsSquare(double* a, double* b, double* c) {
     return 0;
 }
 
-int PrintAnswerSquare(struct SquareAnswer* answer) {
-    if(!answer) {
+int PrintAnswerSquare(const struct SquareAnswer* answer) {
+    if(answer == NULL) {
         return SS_ERROR;
     }
-    //assert(answer);
 
     switch(answer->rootsCount) {
         case 0:
@@ -59,13 +59,10 @@ int PrintAnswerSquare(struct SquareAnswer* answer) {
 }
 
 void SolveLinear(double a, double b, struct SquareAnswer* answer) {
-    if(isinf(a) || isinf(b) || !answer) {
+    if(!CheckNumber(a) || !CheckNumber(b) || answer == NULL) {
         *answer = {SS_ERROR, 0, 0};
         return;
     }
-    /*assert(!isinf(a));
-    assert(!isinf(b));
-    assert(answer);*/
 
     if(isZero(a)) {
         if(isZero(b)) {
@@ -82,14 +79,10 @@ void SolveLinear(double a, double b, struct SquareAnswer* answer) {
 }
 
 void SolveSquare(double a, double b, double c, struct SquareAnswer* answer) {
-    if(isinf(a) || isinf(b) || isinf(c) || !answer) {
+    if(!CheckNumber(a) || !CheckNumber(b) || !CheckNumber(c) || answer == NULL) {
         *answer = {SS_ERROR, 0, 0};
         return;
     }
-    /*assert(!isinf(a));
-    assert(!isinf(b));
-    assert(!isinf(c));
-    assert(answer);*/
 
     if(isZero(a)) {
         SolveLinear(b, c, answer);

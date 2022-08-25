@@ -4,7 +4,7 @@ all: main.o SquareSolver.o
 	g++ $(CFLAGS) main.o SquareSolver.o -o a
 
 test:
-	g++ $(CFLAGS) test.c SquareSolver.c UnitTesting.c -o a
+	g++ $(CFLAGS) test.c UnitTesting.c SquareSolver.c -o a
 
 main.o:
 	g++ $(CFLAGS) -c main.c

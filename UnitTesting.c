@@ -42,7 +42,8 @@ void GetCoefficientsFromFile(FILE* file, double* a, double* b, double* c) {
     return;
 }
 
-int CompareAnswers(struct SquareAnswer* answer1, struct SquareAnswer* answer2) {
+int CompareAnswers(const struct SquareAnswer* answer1,
+                   const struct SquareAnswer* answer2) {
     assert(answer1);
     assert(answer2);
 
@@ -51,31 +52,49 @@ int CompareAnswers(struct SquareAnswer* answer1, struct SquareAnswer* answer2) {
            isEqual(answer1->root2, answer2->root2);
 }
 
+int TakeOneTest(FILE*                          file,
+                struct SquareAnswer*         answer,
+                struct SquareAnswer* expectedAnswer) {
+    assert(file);
+    assert(answer);
+    assert(expectedAnswer);
+
+    double a = 0, b = 0, c = 0;
+    GetCoefficientsFromFile(file, &a, &b, &c);
+
+    SolveSquare(a, b, c, answer);
+    GetExpectedAnswerFromFile(file, expectedAnswer);
+
+    return CompareAnswers(answer, expectedAnswer);
+}
+
 void UnitTestingSquare(const char* fileName) {
     assert(fileName);
 
     FILE* file = fopen(fileName, "r");
     assert(file);
 
-    int N = 0;
+    int N = 0, passedTests = 0;
     fscanf(file, "%d", &N);
 
     for(int i = 1; i <= N; ++i) {
-        double a = 0, b = 0, c = 0;
-        GetCoefficientsFromFile(file, &a, &b, &c);
+        SquareAnswer answer = { }, expectedAnswer = { };
+        int testResult = TakeOneTest(file, &answer, &expectedAnswer);
 
-        SquareAnswer answer = { };
-        SolveSquare(a, b, c, &answer);
-
-        SquareAnswer expectedAnswer = { };
-        GetExpectedAnswerFromFile(file, &expectedAnswer);
-
-        if(!CompareAnswers(&answer, &expectedAnswer)) {
-            printf("[%d] Error\n", i);
+        if(!testResult) {
+            printf("%s[%d] FAILED\n%s", RED, i, RESET);
+            printf("Got: %d %lg %lg\n",               answer.rootsCount,
+                                                           answer.root1,
+                                                           answer.root2);
+            printf("Expected: %d %lg %lg \n", expectedAnswer.rootsCount,
+                                                   expectedAnswer.root1,
+                                                   expectedAnswer.root2);
             continue;
         }
-        printf("[%d] OK\n", i);
+        printf("%s[%d] OK\n%s", GREEN, i, RESET);
+        ++passedTests;
     }
     fclose(file);
+    printf("%s %d/%d passed\n%s", GREEN, passedTests, N, RESET);
     return;
 }
