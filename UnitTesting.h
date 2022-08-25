@@ -17,12 +17,14 @@ int isEqual(double a, double b);
 /// @param [out] a a pointer to a coefficient
 /// @param [out] b a pointer to b coefficient
 /// @param [out] c a pointer to c coefficient
-void GetCoefficientsFromFile(FILE* file, double* a, double* b, double* c);
+/// @return SS_ERROR if something go wrong, 0 if there are no problems
+int GetCoefficientsFromFile(FILE* file, double* a, double* b, double* c);
 
 /// read an expected answer of square equation from file
 /// @param [in] file a pointer to a FILE struct
 /// @param [out] expectedAnswer a pointer to SquareAnswer struct
-void GetExpectedAnswerFromFile(FILE* file, struct SquareAnswer* expectedAnswer);
+/// @return SS_ERROR if something go wrong, 0 if there are no problems
+int GetExpectedAnswerFromFile(FILE* file, struct SquareAnswer* expectedAnswer);
 
 /// identify if 2 answers of square equations are equal
 /// @param [in] answer1 a pointer to first SquareAnswer struct
@@ -42,4 +44,5 @@ int TakeOneTest(FILE*                           file,
 
 /// testing SolveSquare() function
 /// @param [in] fileName a string containing name of file with tests
-void UnitTestingSquare(const char* fileName);
+/// @return SS_ERROR if something go wrong, 0 if there are no problems
+int UnitTestingSquare(const char* fileName);

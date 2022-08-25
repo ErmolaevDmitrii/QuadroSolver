@@ -26,7 +26,14 @@ int GetCoefficientsSquare(double* a, double* b, double* c) {
 
     printf("Введите коэффициенты квадратного уравнения: ");
 
-    while(scanf("%lg%lg%lg", a, b, c) != 3) {
+    while(true) {
+        int scanned = scanf("%lg%lg%lg", a, b, c);
+        if(scanned == EOF) {
+            return SS_ERROR;
+        }
+        if(scanned == 3) {
+            break;
+        }
         CleanTerminalBuffer();
         printf("Некорректный ввод, повторите: ");
     }

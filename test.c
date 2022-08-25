@@ -7,8 +7,11 @@
 int main(int argc, char* argv[]) {
     char testsFileName[256] = "tests.txt";
     if(argc > 1) {
-        strcpy(testsFileName, argv[1]);
+        strncpy(testsFileName, argv[1], 256);
     }
-    UnitTestingSquare(testsFileName);
+    int returned = UnitTestingSquare(testsFileName);
+    if(returned == SS_ERROR) {
+        printf("%sTesting ended with errors\n%s", RED, RESET);
+    }
     return 0;
 }

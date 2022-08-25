@@ -2,11 +2,16 @@
 /// @brief Source file containing main function
 
 #include <stdio.h>
+#include "Colors.h"
 #include "SquareSolver.h"
 
 int main() {
     double a = 0, b = 0, c = 0;
-    GetCoefficientsSquare(&a, &b, &c);
+    int returned = GetCoefficientsSquare(&a, &b, &c);
+    if(returned == SS_ERROR) {
+        printf("\n%sEOF в вводе, выход\n%s", RED, RESET);
+        return 0;
+    }
 
     struct SquareAnswer answer = {};
     SolveSquare(a, b, c, &answer);
