@@ -47,12 +47,12 @@ $ ./a tests.txt
 
 ## What's included?
 -----------------
-``main.c``  and  ``test.c`` - source files for main program and testing system
+- ``main.c``  and  ``test.c`` - source files for main program and testing system
 
-``SquareSolver.h``  and  ``SquareSolver.c`` - a library for solving square equations
+- ``SquareSolver.h``  and  ``SquareSolver.c`` - a library for solving square equations
 
-``UnitTesting.h``  and  ``UnitTesting.c`` - a library for unit testing
+- ``UnitTesting.h``  and  ``UnitTesting.c`` - a library for unit testing
 
-``SS_Errors.h`` - an error enumeration
+- ``SS_Errors.h`` - an error enumeration
 
-``Colors.h`` - header file with constants for coloring output in terminal
+- ``Colors.h`` - header file with constants for coloring output in terminal
