@@ -20,9 +20,9 @@ struct SquareAnswer {
     /// count of roots
     int rootsCount;
     /// variable for first root
-    double root1;
+    double   root1;
     /// variable for second root
-    double root2;
+    double   root2;
 };
 
 /// identify if it's error code or not
