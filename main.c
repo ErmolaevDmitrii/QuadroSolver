@@ -8,7 +8,7 @@
 int main() {
     double a = 0, b = 0, c = 0;
     int returned = GetCoefficientsSquare(&a, &b, &c);
-    if(returned == SS_ERROR) {
+    if(isError(returned)) {
         printf("\n%sEOF в вводе, выход\n%s", RED, RESET);
         return 0;
     }

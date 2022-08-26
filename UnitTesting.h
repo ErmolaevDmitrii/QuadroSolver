@@ -1,9 +1,13 @@
 /// @file
 /// @brief Header file containing functions for SquareSolve() function unit testing
 
+#ifndef UNITTESTING_H
+#define UNITTESTING_H
+
 #include <stdio.h>
 #include <assert.h>
 #include "SquareSolver.h"
+#include "SS_Errors.h"
 #include "Colors.h"
 
 /// identify if 2 double numbers are equal with SS_ZERO accurancy
@@ -46,3 +50,4 @@ int TakeOneTest(FILE*                           file,
 /// @param [in] fileName a string containing name of file with tests
 /// @return SS_ERROR if something go wrong, 0 if there are no problems
 int UnitTestingSquare(const char* fileName);
+#endif

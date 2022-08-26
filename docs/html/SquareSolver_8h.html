@@ -75,6 +75,8 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="SS__Errors_8h_source.html">SS_Errors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Colors_8h_source.html">Colors.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SquareSolver.h:</div>
 <div class="dyncontent">
@@ -96,14 +98,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa61fafb5c86916e3f9feffc91e8c5d50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#aa61fafb5c86916e3f9feffc91e8c5d50">isError</a> (int code)</td></tr>
+<tr class="separator:aa61fafb5c86916e3f9feffc91e8c5d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78ac164233803c28073776ec658f688a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#a78ac164233803c28073776ec658f688a">CheckNumber</a> (double a)</td></tr>
 <tr class="separator:a78ac164233803c28073776ec658f688a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab23e029bde3c69067a5bc9f063e16e81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#ab23e029bde3c69067a5bc9f063e16e81">isZero</a> (double a)</td></tr>
 <tr class="separator:ab23e029bde3c69067a5bc9f063e16e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a852ec46d106fbe368fd11fe83b03b07a"><td class="memItemLeft" align="right" valign="top"><a id="a852ec46d106fbe368fd11fe83b03b07a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#a852ec46d106fbe368fd11fe83b03b07a">CleanTerminalBuffer</a> ()</td></tr>
-<tr class="memdesc:a852ec46d106fbe368fd11fe83b03b07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">clean terminal buffer <br /></td></tr>
-<tr class="separator:a852ec46d106fbe368fd11fe83b03b07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbcbde367e42b125b45c70652a2fd1c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#adbcbde367e42b125b45c70652a2fd1c8">CleanTerminalBuffer</a> ()</td></tr>
+<tr class="separator:adbcbde367e42b125b45c70652a2fd1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae705ae19b619fd147a42aba88758bda8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#ae705ae19b619fd147a42aba88758bda8">GetCoefficientsSquare</a> (double *a, double *b, double *c)</td></tr>
 <tr class="separator:ae705ae19b619fd147a42aba88758bda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31c8787d70b85b193eed96c5d0d92657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#a31c8787d70b85b193eed96c5d0d92657">SolveLinear</a> (double a, double b, struct <a class="el" href="structSquareAnswer.html">SquareAnswer</a> *answer)</td></tr>
@@ -112,6 +114,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Squa
 <tr class="separator:a25f4e5b310b9d0e43a8dabd2d7a1322f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad58bf1fbc52d22f9519b5b849282ec0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#ad58bf1fbc52d22f9519b5b849282ec0f">PrintAnswerSquare</a> (const struct <a class="el" href="structSquareAnswer.html">SquareAnswer</a> *answer)</td></tr>
 <tr class="separator:ad58bf1fbc52d22f9519b5b849282ec0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98db8a52830fe6b8595b11e6646527d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#a98db8a52830fe6b8595b11e6646527d9">PrintError</a> (int code)</td></tr>
+<tr class="separator:a98db8a52830fe6b8595b11e6646527d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -123,10 +127,6 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#ad1a9bc66e9dc4853313927d0653525f3">SS_INF_NUMBER_OF_ROOTS</a> = -1</td></tr>
 <tr class="memdesc:ad1a9bc66e9dc4853313927d0653525f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">index for infinite count of roots <br /></td></tr>
 <tr class="separator:ad1a9bc66e9dc4853313927d0653525f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9634f2acaad334d941f7b9bb9ac4bf8"><td class="memItemLeft" align="right" valign="top"><a id="aa9634f2acaad334d941f7b9bb9ac4bf8"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SquareSolver_8h.html#aa9634f2acaad334d941f7b9bb9ac4bf8">SS_ERROR</a> = -2</td></tr>
-<tr class="memdesc:aa9634f2acaad334d941f7b9bb9ac4bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">index for error occused while calculating square equation <br /></td></tr>
-<tr class="separator:aa9634f2acaad334d941f7b9bb9ac4bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file with structs and functions for solving square equations. </p>
@@ -153,6 +153,24 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 or 0 if it's correct or not </dd></dl>
+
+</div>
+</div>
+<a id="adbcbde367e42b125b45c70652a2fd1c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbcbde367e42b125b45c70652a2fd1c8">&#9670;&nbsp;</a></span>CleanTerminalBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CleanTerminalBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>clean terminal buffer </p><dl class="section return"><dt>Returns</dt><dd>SS_ERROR constant </dd></dl>
 
 </div>
 </div>
@@ -195,7 +213,32 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>SS_ERROR if input values aren't correct, 0 if there are no problems </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>SS_ERROR constant </dd></dl>
+
+</div>
+</div>
+<a id="aa61fafb5c86916e3f9feffc91e8c5d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61fafb5c86916e3f9feffc91e8c5d50">&#9670;&nbsp;</a></span>isError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isError </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>identify if it's error code or not </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">code</td><td>a code for errors enum </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 or 0 if it's error code or not </dd></dl>
 
 </div>
 </div>
@@ -220,7 +263,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>SS_ERROR if input value isn't correct, 1 or 0 if value is 0 or not </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>SS_ERROR constant if input value isn't correct, 1 or 0 if value is 0 or not </dd></dl>
 
 </div>
 </div>
@@ -245,7 +288,31 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>SS_ERROR if input value isn't correct, 0 if there are no problems </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>SS_ERROR constant </dd></dl>
+
+</div>
+</div>
+<a id="a98db8a52830fe6b8595b11e6646527d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98db8a52830fe6b8595b11e6646527d9">&#9670;&nbsp;</a></span>PrintError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PrintError </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print info about error in terminal </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">code</td><td>a code for errors enum </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

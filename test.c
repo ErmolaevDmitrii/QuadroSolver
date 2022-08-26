@@ -10,8 +10,9 @@ int main(int argc, char* argv[]) {
         strncpy(testsFileName, argv[1], 256);
     }
     int returned = UnitTestingSquare(testsFileName);
-    if(returned == SS_ERROR) {
+    if(isError(returned)) {
         printf("%sTesting ended with errors\n%s", RED, RESET);
+        PrintError(returned);
     }
     return 0;
 }

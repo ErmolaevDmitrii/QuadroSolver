@@ -15,4 +15,7 @@ digraph "main.c"
   Node5 [label="math.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="assert.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SS_Errors.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SS__Errors_8h.html",tooltip="Header file containing errors enumeration."];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
