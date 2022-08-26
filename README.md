@@ -1,10 +1,14 @@
 ## **SquareSolver**
+-------------------
+
 Simple program for square equations solving.
 
 Library with functions and testing system include.
 
 ## Compilation
 --------------
+Use ``make`` to compile in different modes
+
 To compile main program in terminal:
 ```
 $ make
@@ -14,6 +18,8 @@ To compile in testing mode in terminal:
 $ make test
 ```
 
+For documentation ``doxygen`` used
+
 To make documentation in terminal:
 ```
 $ doxygen config
@@ -21,14 +27,14 @@ $ doxygen config
 
 ## Usage
 --------
-You can solve any kind of square equations by just typing 3 coefficients of equation:
+You can solve **any kind** of square equations by just typing 3 coefficients of equation:
 ```
 $ ./a
 Введите коэффициенты квадратного уравнения: 1 -2 1
 1 корень: 1.00
 ```
 
-To test square solving you can write your own tests and run testing (compile in testing mode)
+To test square solving you can write your own tests and run testing (***compile in testing mode***)
 ```
 $ ./a tests.txt
 [1] OK
@@ -39,7 +45,7 @@ $ ./a tests.txt
 21/21 passed
 ```
 
-## What included?
+## What's included?
 -----------------
 ``main.c``  and  ``test.c`` - source files for main program and testing system
 
