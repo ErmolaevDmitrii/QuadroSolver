@@ -4,7 +4,7 @@ Simple program for square equations solving.
 
 Library with functions and testing system include.
 
-SquareSolver.h, SquareSolver.c -           Library
+SquareSolver.h, SquareSolver.c       -     Library
 SS_Errors.h   -  Enumeration with different errors
 Colors.h         -        Color codes for terminal
 UnitTesting.h, UnitTesting.c - unit testing system
